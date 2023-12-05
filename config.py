@@ -3,10 +3,10 @@ token = "6839276318:AAGdya5Lt117bExxz0by2yD8r85swy0wSrQ" # token bot
 
 # CREATE DATABASE TelegramBotDB CHARACTER SET utf8;
 # CREATE USER 'TelegramBotUser'@'localhost' IDENTIFIED BY 'TelegramBotPass';
-# GRANT ALL PRIVILEGES ON TelegramBotDB.* TO 'TelegramBotUser'@'localhost';
+# GRANT ALL PRIVILEGES ON TelegramBotDB.* TO 'TelegramBotUserMain'@'localhost';
 
 host_db = 'localhost'
 database = 'TelegramBotDB' # database name
-user_db = 'TelegramBotUser' # database username
-passwd_db = 'TelegramBotPass' # database password
+user_db = 'TelegramBotUserMain' # database username
+passwd_db = 'TelegramBotPass1!' # database password
 port = 3306
