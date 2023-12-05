@@ -201,6 +201,6 @@ def get_pids_by_full_script_name(script_name):
             # print(e)
             pass
 
-        if (len(cmdline) >= 2 and 'python' in cmdline[0] and cmdline[1] == script_name):
+        if (len(cmdline) >= 2 and 'python3' in cmdline[0] and cmdline[1] == script_name):
             pids.append(int(pid))
     return pids

@@ -15,6 +15,6 @@ for pid in result:
         except:
             pass
 
-subprocess.Popen(["python", f"{directory}/bot.py"])
-subprocess.Popen(["python", f"{directory}/cr.settings.py"])
-subprocess.Popen(["python", f"{directory}/tl.send-to-pv.py"])
+subprocess.Popen(["python3", f"{directory}/bot.py"])
+subprocess.Popen(["python3", f"{directory}/cr.settings.py"])
+subprocess.Popen(["python3", f"{directory}/tl.send-to-pv.py"])

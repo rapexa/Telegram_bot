@@ -770,7 +770,7 @@ def private_process(update: Update, context: CallbackContext) -> None:
                             return message.reply_html(text="❌ Previously registered phone number")
                     info_msg = message.reply_html(text="Pending ...")
                     cs.execute(f"UPDATE {utl.mbots} SET creator_user_id='{from_id}',phone='{phone}' WHERE id={row_mbots['id']}")
-                    os.system(f"python \"{directory}/tl.account.py\" {from_id} first_level {row_mbots['id']}")
+                    os.system(f"python3 \"{directory}/tl.account.py\" {from_id} first_level {row_mbots['id']}")
                     info_msg.delete()
                 return
             elif ex_step[1] == 'code':
@@ -783,7 +783,7 @@ def private_process(update: Update, context: CallbackContext) -> None:
                             return message.reply_html(text="❌ Incorrect input")
                         cs.execute(f"UPDATE {utl.mbots} SET code='{int(ex_nl_text[0])}',password='{ex_nl_text[1]}' WHERE id={row_mbots['id']}")
                     info_msg = message.reply_html(text="Pending ...")
-                    os.system(f"python \"{directory}/tl.account.py\" {from_id} code {row_mbots['id']}")
+                    os.system(f"python3 \"{directory}/tl.account.py\" {from_id} code {row_mbots['id']}")
                     cs.execute(f"SELECT * FROM {utl.mbots} WHERE id={row_mbots['id']}")
                     row_mbots = cs.fetchone()
                     if row_mbots['status'] == 'submitted':
@@ -1012,7 +1012,7 @@ def private_process(update: Update, context: CallbackContext) -> None:
                         text="Pending ...",
                         reply_markup={'resize_keyboard': True,'keyboard': [[{'text': utl.menu_var}]]}
                     )
-                    os.system(f"python \"{directory}/tl.analyze.py\" {from_id} check {row_gtg['id']}")
+                    os.system(f"python3 \"{directory}/tl.analyze.py\" {from_id} check {row_gtg['id']}")
                 return
             elif ex_step[1] == 'type_users':
                 info_msg = message.reply_html(text="Configuring...")
@@ -1203,7 +1203,7 @@ def private_process(update: Update, context: CallbackContext) -> None:
                 else:
                     cs.execute(f"UPDATE {utl.users} SET step='start' WHERE user_id='{from_id}'")
                     info_msg = message.reply_html(text="Pending ...")
-                    os.system(f"python \"{directory}/tl.analyze.py\" {from_id} analyze {row_egroup['id']}")
+                    os.system(f"python3 \"{directory}/tl.analyze.py\" {from_id} analyze {row_egroup['id']}")
                     user_panel(update)
                     info_msg.delete()
             elif ex_step[1] == 'messages':
@@ -1217,7 +1217,7 @@ def private_process(update: Update, context: CallbackContext) -> None:
                 else:
                     cs.execute(f"UPDATE {utl.users} SET step='start' WHERE user_id='{from_id}'")
                     info_msg = message.reply_html(text="Pending ...")
-                    os.system(f"python \"{directory}/tl_analyze_messages.py\" {from_id} {row_egroup['id']}")
+                    os.system(f"python3 \"{directory}/tl_analyze_messages.py\" {from_id} {row_egroup['id']}")
                     user_panel(update)
                     info_msg.delete()
             return
@@ -1582,7 +1582,7 @@ def private_process(update: Update, context: CallbackContext) -> None:
             return
         elif text == '/import':
             info_msg = message.reply_html(text="Pending ...")
-            os.system(f"python \"{directory}/tl.import.py\" {from_id}")
+            os.system(f"python3 \"{directory}/tl.import.py\" {from_id}")
             user_panel(update, "✅ The session import operation is over")
             info_msg.delete()
             return
@@ -1602,12 +1602,12 @@ def private_process(update: Update, context: CallbackContext) -> None:
             return
         elif text == '/LeaveGroups':
             info_msg = message.reply_html(text=f"Pending ...")
-            os.system(f"python \"{directory}/tl.leave.py\" {from_id} group")
+            os.system(f"python3 \"{directory}/tl.leave.py\" {from_id} group")
             info_msg.delete()
             return
         elif text == '/DeleteChats':
             info_msg = message.reply_html(text=f"Pending ...")
-            os.system(f"python \"{directory}/tl.leave.py\" {from_id} private")
+            os.system(f"python3 \"{directory}/tl.leave.py\" {from_id} private")
             info_msg.delete()
             return
         elif ex_text[0] == '/category':
@@ -1666,7 +1666,7 @@ def private_process(update: Update, context: CallbackContext) -> None:
                 message.reply_html(text="❌ Not found")
             else:
                 info_msg = message.reply_html(text="Pending ...")
-                os.system(f"python \"{directory}/tl.account-status.py\" {from_id} sessions {row_mbots['id']}")
+                os.system(f"python3 \"{directory}/tl.account-status.py\" {from_id} sessions {row_mbots['id']}")
                 info_msg.delete()
             return
         elif ex_text[0] == '/status':
@@ -1676,7 +1676,7 @@ def private_process(update: Update, context: CallbackContext) -> None:
                 message.reply_html(text="❌ Not found")
             else:
                 info_msg = message.reply_html(text="Pending ...")
-                os.system(f"python \"{directory}/tl.account-status.py\" {from_id} check {row_mbots['id']}")
+                os.system(f"python3 \"{directory}/tl.account-status.py\" {from_id} check {row_mbots['id']}")
                 cs.execute(f"SELECT * FROM {utl.cats} WHERE id={row_mbots['cat_id']}")
                 row_cats = cs.fetchone()
                 message.reply_html(
