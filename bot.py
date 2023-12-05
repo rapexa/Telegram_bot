@@ -1574,9 +1574,9 @@ def private_process(update: Update, context: CallbackContext) -> None:
         elif text == '📞 support':
             message.reply_html(
                 text="📞 support\n\n"+
-                    f"- آدرس سایت:https://addjou.shop\n\n"+
-                    f"- آیدی کانال: @addjou\n\n"+
-                    "- آیدی پشتیبان: @add_jou\n\n"+
+                    f"- آدرس سایت:https://rapexa.ir\n\n"+
+                    f"- آیدی کانال: @rapexa\n\n"+
+                    "- آیدی پشتیبان: @rapexam\n\n"+
                     "➖➖➖➖➖➖",
             )
             return
