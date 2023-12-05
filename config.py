@@ -1,8 +1,12 @@
-admin_id = 123456789 # admin user id
-token = "" # token bot
+admin_id = 5728008667 # admin user id
+token = "6839276318:AAGdya5Lt117bExxz0by2yD8r85swy0wSrQ" # token bot
+
+# CREATE DATABASE TelegramBotDB CHARACTER SET utf8;
+# CREATE USER 'TelegramBotUser'@'localhost' IDENTIFIED BY 'TelegramBotPass';
+# GRANT ALL PRIVILEGES ON TelegramBotDB.* TO 'TelegramBotUser'@'localhost';
 
 host_db = 'localhost'
-database = '' # database name
-user_db = '' # database username
-passwd_db = '' # database password
+database = 'TelegramBotDB' # database name
+user_db = 'TelegramBotUser' # database username
+passwd_db = 'TelegramBotPass' # database password
 port = 3306
